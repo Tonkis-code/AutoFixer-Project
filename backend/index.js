@@ -1,12 +1,16 @@
 // Load the Express package so we can use it in this file
 const express = require('express');
+const cors = require('cors');
 const db = require('./database');
 
 
 // Creates our Express application
 const app = express();
 
+app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
+
 
 app.get('/api', (req, res) => {
     res.send('Welcome to AutoFixer API');
