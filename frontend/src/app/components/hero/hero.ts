@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Vehicle } from '../../models/vehicle';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
-  imports: [],
+  imports: [DecimalPipe],
   selector: 'app-hero',
   styleUrl: './hero.css',
   templateUrl: './hero.html',
 })
-export class Hero {}
+export class Hero {
+  vehicle = input.required<Vehicle>();
+}

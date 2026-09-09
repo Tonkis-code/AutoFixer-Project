@@ -1,1 +1,10 @@
-<p>hero works!</p>
+<section class="hero">
+    <img [src]="'http://localhost:3000/images/' + vehicle().imageUrl" [alt]="vehicle().name">
+
+    <div class="hero-info">
+        <p class="manufacturer">{{ vehicle().manufacturer }}</p>
+        <p class="vehicle-name">{{ vehicle().name }}</p>
+        <p class="price">€$ {{ vehicle().price | number }}</p>
+        <button>Explore Vehicle</button>
+    </div>
+</section>

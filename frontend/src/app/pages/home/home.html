@@ -1,3 +1,7 @@
+@if (vehicles().length > 0) {
+<app-hero [vehicle]="vehicles()[0]" />
+}
+
 <div class="vehicle-grid">
 
     @for (vehicle of vehicles(); track vehicle.id) {
