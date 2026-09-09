@@ -1,13 +1,9 @@
-<h1>Vehicles</h1>
+<div class="vehicle-grid">
 
-<p>Count: {{ vehicles().length }}</p>
+    @for (vehicle of vehicles(); track vehicle.id) {
+    <div>
+        <app-vehicle-card [vehicle]="vehicle" />
+    </div>
+    }
 
-@for (vehicle of vehicles(); track vehicle.id) {
-<div>
-
-    <img [src]="'http://localhost:3000/images/' + vehicle.imageUrl" [alt]="vehicle.name">
-    <h1>{{ vehicle.name }}</h1>
-    <p>{{ vehicle.manufacturer }}</p>
-    <p>{{ vehicle.price }}</p>
 </div>
-}

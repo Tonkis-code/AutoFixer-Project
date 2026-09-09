@@ -1,0 +1,15 @@
+.vehicle-card {
+  background: #111;
+  border: 1px solid #333;
+  overflow: hidden;
+}
+
+.vehicle-card img {
+  width: 100%;
+  display: block;
+}
+
+.vehicle-info {
+  padding: 1rem;
+  color: white;
+}
