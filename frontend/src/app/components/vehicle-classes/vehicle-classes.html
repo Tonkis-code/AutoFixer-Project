@@ -1,0 +1,9 @@
+<section class="vehicle-classes">
+    <h2>CHOOSE YOUR CLASS</h2>
+
+    <div class="class-grid">
+        @for (vehicleClass of vehicleClasses; track vehicleClass.className) {
+        <app-vehicle-class-card [className]="vehicleClass.className" [imageUrl]="vehicleClass.imageUrl" />
+        }
+    </div>
+</section>

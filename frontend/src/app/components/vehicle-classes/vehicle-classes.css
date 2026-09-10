@@ -1,0 +1,30 @@
+.vehicle-classes {
+  padding: 2rem 1rem;
+  margin-bottom: 4rem;
+}
+
+.vehicle-classes h2 {
+  margin-top: 0;
+  color: white;
+  font-family: 'Rajdhani', sans-serif;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.class-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .class-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .class-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

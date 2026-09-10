@@ -77,3 +77,9 @@ header button {
   margin: 0 0 2rem;
   padding-right: 3rem;
 }
+
+@media (max-width: 639px) {
+  .logo.menu-open {
+    visibility: hidden;
+  }
+}

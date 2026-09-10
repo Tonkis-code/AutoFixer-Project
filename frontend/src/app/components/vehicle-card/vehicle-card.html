@@ -2,7 +2,7 @@
     <img [src]="'http://localhost:3000/images/' + vehicle().imageUrl" [alt]="vehicle().name">
     <div class="vehicle-info">
         <h1>{{ vehicle().name }}</h1>
-        <p>{{ vehicle().manufacturer }}</p>
-        <p>€$ {{ vehicle().price | number }}</p>
+        <p class="manufacturer">{{ vehicle().manufacturer }}</p>
+        <p class="price">€$ {{ vehicle().price | number }}</p>
     </div>
 </article>
