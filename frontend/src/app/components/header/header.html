@@ -1,4 +1,15 @@
 <header>
     <h1 class="logo">AutoFixer</h1>
-    <button>☰</button>
+    <button (click)="menuOpen.set(!menuOpen())">☰</button>
 </header>
+
+
+<nav class="nav-menu" [class.open]="menuOpen()">
+    <h2 class="menu-logo">AutoFixer</h2>
+    <input type="text" placeholder="Search vehicles">
+
+    <div class="menu-links">
+        <a href="#">Vehicle Classes</a>
+        <a href="#">Admin</a>
+    </div>
+</nav>
