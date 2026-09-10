@@ -1,6 +1,6 @@
 # AutoFixer
 
-AutoFixer is a full-stack e-commerce project for buying vehicles, inspired by the world and visual style of Cyberpunk 2077.
+AutoFixer is a full-stack e-commerce application for browsing and buying vehicles, inspired by the world and visual style of Cyberpunk 2077.
 
 The project is being developed as part of the JavaScript 3 course and consists of an Angular frontend, an Express backend, and a SQLite database.
 
@@ -19,21 +19,40 @@ The project is being developed as part of the JavaScript 3 course and consists o
 ```text
 autofixer-project/
 ├── frontend/       # Angular application
-└── backend/        # Express API and SQLite database
+└── backend/        # Express API, vehicle images and SQLite database
 ```
 
-## Current Backend Features
+## Current Features
 
-The backend currently supports:
+### Frontend
+
+The Angular frontend currently includes:
+
+- Responsive site header and navigation
+- Mobile hamburger menu
+- Dynamic featured vehicle Hero
+- Dynamic vehicle catalogue populated from the backend
+- Reusable vehicle card components
+- Vehicle class section
+- Hypercar, Sport, Motorcycle and Offroad categories
+- Responsive layouts for desktop, tablet and mobile
+- Vehicle images served by the Express backend
+- Cyberpunk-inspired visual design
+
+### Backend
+
+The Express backend currently supports:
 
 - Retrieving all vehicles
 - Retrieving a single vehicle by slug
 - Adding new vehicles
 - SQLite database storage
+- Vehicle seed data
+- Static vehicle image hosting
 - Basic API error handling
 - 404 handling when a vehicle cannot be found
 
-### API Endpoints
+## API Endpoints
 
 | Method | Endpoint              | Description           |
 | ------ | --------------------- | --------------------- |
@@ -61,18 +80,27 @@ Example:
 ```json
 {
   "id": 1,
-  "name": "Kusanagi CT-3X",
-  "manufacturer": "Yaiba",
-  "description": "Devilishly fast bike available right now on autofixer",
-  "price": 66000,
-  "imageUrl": "kusanagict3x.png",
-  "slug": "yaiba-kusanagi-ct-3x",
-  "sku": "YAI-CT3X-001",
-  "vehicleClass": "Motorcycle"
+  "name": "Caliburn",
+  "manufacturer": "Rayfield",
+  "description": "A luxury hypercar combining breathtaking speed with unmistakable Rayfield design.",
+  "price": 135000,
+  "imageUrl": "caliburn.png",
+  "slug": "rayfield-caliburn",
+  "sku": "RAY-CAL-001",
+  "vehicleClass": "Hypercar"
 }
 ```
 
-## Running the Backend
+The database is currently seeded with eight vehicles across four vehicle classes:
+
+- Hypercar
+- Sport
+- Motorcycle
+- Offroad
+
+## Running the Project
+
+### Backend
 
 Navigate to the backend directory:
 
@@ -86,7 +114,13 @@ Install dependencies:
 npm install
 ```
 
-Start the server:
+Seed the vehicle database:
+
+```bash
+node seed.js
+```
+
+Start the Express server:
 
 ```bash
 node index.js
@@ -98,26 +132,65 @@ The API will run on:
 http://localhost:3000
 ```
 
+### Frontend
+
+Open another terminal and navigate to the frontend directory:
+
+```bash
+cd frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the Angular development server:
+
+```bash
+ng serve
+```
+
+Then open the local address shown by Angular in the terminal.
+
 ## Development Status
 
-AutoFixer is currently under development.
+AutoFixer is currently under active development.
 
-Planned functionality includes:
+### Implemented
 
-- Dynamic vehicle catalogue
-- Featured vehicle
-- Vehicle classes
+- Express REST API
+- SQLite vehicle database
+- Database seeding
+- Eight-vehicle catalogue
+- Dynamic vehicle data
+- Dynamic featured vehicle
+- Vehicle class cards
+- Backend-hosted vehicle images
+- Responsive header and navigation
+- Mobile navigation drawer
+- Responsive vehicle and class layouts
+
+### Still To Come
+
 - Vehicle detail pages
-- Search
-- Similar vehicles
-- Admin product management
-- Adding vehicles through the admin interface
-- Responsive design
+- Search functionality
+- Search results page
+- Similar vehicle recommendations
+- Admin product list
+- Admin product creation form
+- Additional navigation and routing
+- Final responsive and visual polish
 
 ## Design
 
-The interface is based on an original Figma design with a dark, futuristic vehicle marketplace theme inspired by Cyberpunk 2077.
+The interface is based on an original Figma design created for the project. It uses a dark, futuristic vehicle marketplace aesthetic inspired by Cyberpunk 2077.
+
+Vehicle screenshots used throughout the interface were captured in-game specifically for the project.
 
 ## Disclaimer
 
-This is a non-commercial student project created for educational purposes. Cyberpunk 2077 and related names and imagery are property of their respective rights holders.
+AutoFixer is a non-commercial student project created for educational purposes.
+
+Cyberpunk 2077 and related vehicle names, designs, imagery and other intellectual property belong to their respective rights holders.
