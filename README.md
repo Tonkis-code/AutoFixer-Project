@@ -1,6 +1,6 @@
 # AutoFixer
 
-AutoFixer is a full-stack e-commerce application for browsing and buying vehicles, inspired by the world and visual style of Cyberpunk 2077.
+AutoFixer is a full-stack e-commerce application for browsing vehicles, inspired by the world and visual style of Cyberpunk 2077.
 
 The project is being developed as part of the JavaScript 3 course and consists of an Angular frontend, an Express backend, and a SQLite database.
 
@@ -29,13 +29,21 @@ autofixer-project/
 The Angular frontend currently includes:
 
 - Responsive site header and navigation
-- Mobile hamburger menu
-- Dynamic featured vehicle Hero
+- Mobile hamburger navigation drawer
+- Shopping cart icon
+- Dynamic featured vehicle Hero carousel
+- Automatic Hero slideshow
+- Manual Hero carousel navigation
+- Seamless forward and backward carousel looping
+- Responsive Hero layout for desktop, tablet and mobile
 - Dynamic vehicle catalogue populated from the backend
+- Eight featured vehicles
 - Reusable vehicle card components
-- Vehicle class section
-- Hypercar, Sport, Motorcycle and Offroad categories
-- Responsive layouts for desktop, tablet and mobile
+- Dynamic vehicle class section
+- Hypercar, Sport, Motorcycle and Offroad classes
+- Responsive vehicle and class layouts
+- Reusable site footer
+- Non-commercial project disclaimer
 - Vehicle images served by the Express backend
 - Cyberpunk-inspired visual design
 
@@ -165,22 +173,30 @@ AutoFixer is currently under active development.
 - Database seeding
 - Eight-vehicle catalogue
 - Dynamic vehicle data
-- Dynamic featured vehicle
+- Dynamic featured Hero carousel
+- Automatic Hero slideshow
+- Seamless carousel looping
+- Manual carousel navigation
+- Responsive Hero layout
 - Vehicle class cards
 - Backend-hosted vehicle images
 - Responsive header and navigation
 - Mobile navigation drawer
+- Shopping cart icon
 - Responsive vehicle and class layouts
+- Responsive site footer
+- Project disclaimer
 
 ### Still To Come
 
-- Vehicle detail pages
 - Search functionality
 - Search results page
+- Vehicle detail pages
 - Similar vehicle recommendations
+- Vehicle card navigation
 - Admin product list
 - Admin product creation form
-- Additional navigation and routing
+- Final navigation and routing
 - Final responsive and visual polish
 
 ## Design
