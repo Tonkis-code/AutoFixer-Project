@@ -1,15 +1,19 @@
 @if (vehicles().length > 0) {
-<app-hero [vehicle]="vehicles()[0]" />
+<app-hero [vehicles]="vehicles()" />
 }
 
 <app-vehicle-classes />
 
-<div class="vehicle-grid">
+<section class="featured-vehicles">
+    <h2>FEATURED VEHICLES</h2>
 
-    @for (vehicle of vehicles(); track vehicle.id) {
-    <div>
-        <app-vehicle-card [vehicle]="vehicle" />
+    <div class="vehicle-grid">
+
+        @for (vehicle of vehicles(); track vehicle.id) {
+        <div>
+            <app-vehicle-card [vehicle]="vehicle" />
+        </div>
+        }
+
     </div>
-    }
-
-</div>
+</section>
