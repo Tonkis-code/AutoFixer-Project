@@ -85,3 +85,14 @@
 .hero-track.no-transition {
   transition: none;
 }
+
+@media (max-width: 639px) {
+  .hero {
+    height: 60vh;
+    min-height: 500px;
+  }
+
+  .hero-track img {
+    object-position: center center;
+  }
+}
