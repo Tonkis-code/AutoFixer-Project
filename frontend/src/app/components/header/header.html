@@ -15,3 +15,28 @@
         </button>
     </div>
 </header>
+
+<nav class="nav-menu" [class.open]="menuOpen()">
+    <h2 class="menu-logo">AutoFixer</h2>
+    <div class="menu-search">
+        <input type="text" placeholder="Search vehicles">
+        <button aria-label="Search">→</button>
+    </div>
+    <p class="menu-label">NAVIGATION</p>
+
+    <div class="menu-links">
+        <a href="#">
+            <span>Vehicle Classes</span>
+            <span>→</span>
+        </a>
+        <a href="#">
+            <span>Admin</span>
+            <span>→</span>
+        </a>
+    </div>
+
+    <div class="menu-bottom">
+        <p>NIGHT CITY VEHICLE MARKETPLACE</p>
+        <span>© 2026 AutoFixer</span>
+    </div>
+</nav>
