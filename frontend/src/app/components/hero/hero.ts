@@ -1,4 +1,4 @@
-import { Component, input, computed, signal } from '@angular/core';
+import { Component, input, computed, signal, OnInit, OnDestroy } from '@angular/core';
 import { Vehicle } from '../../models/vehicle';
 import { DecimalPipe } from '@angular/common';
 
@@ -8,16 +8,25 @@ import { DecimalPipe } from '@angular/common';
   styleUrl: './hero.css',
   templateUrl: './hero.html',
 })
-export class Hero {
+export class Hero implements OnInit, OnDestroy {
+  // INPUTS
   // Receives all vehicles from the home component
   vehicles = input.required<Vehicle[]>();
 
-  // Keeps track of which hero slider is currently shown
+  // STATE / SIGNALS
+  // Keeps track of which hero slide is currently shown
   currentIndex = signal(1);
 
   // Prevents multiple clicks while the slide animation is running
   isSliding = signal(false);
 
+  // Controls whether the slide transition is active
+  transitionEnabled = signal(true);
+
+  // Stores the autoplay timer so it can be reset or cleared
+  private autoplayInterval?: ReturnType<typeof setInterval>;
+
+  // COMPUTED VALUES
   // Creates the hero slides using vehicle data from the database
   slides = computed(() => {
     const heroVehicles = [
@@ -57,7 +66,7 @@ export class Hero {
     );
   });
 
-  // Adds a copy of the first slide to the end for a seamless loop
+  // Adds copies to both ends for seamless looping
   carouselSlides = computed(() => {
     const slides = this.slides();
 
@@ -67,8 +76,6 @@ export class Hero {
 
     return [slides[slides.length - 1], ...slides, slides[0]];
   });
-
-  transitionEnabled = signal(true);
 
   // Get the slide matching the current index
   currentSlide = computed(() => {
@@ -83,6 +90,26 @@ export class Hero {
     return slides[realIndex];
   });
 
+  // ANGULAR LIFECYCLE - component starts
+  // Starts autoplay when the component loads
+  ngOnInit() {
+    this.autoplayInterval = setInterval(() => {
+      this.nextSlide();
+    }, 5000);
+  }
+
+  // USER INTERACTION
+  manualNextSlide() {
+    this.restartAutoPlay();
+    this.nextSlide();
+  }
+
+  manualPreviousSlide() {
+    this.restartAutoPlay();
+    this.previousSlide();
+  }
+
+  // CAROUSEL MOVEMENT
   // Move forward one slide and loop back to the beginning
   nextSlide() {
     if (this.isSliding()) {
@@ -103,6 +130,7 @@ export class Hero {
     this.currentIndex.update((index) => index - 1);
   }
 
+  // TRANSITION / LOOP HANDLING
   onTransitionEnd() {
     // Reached copied Caliburn at the end
     if (this.currentIndex() === this.carouselSlides().length - 1) {
@@ -135,5 +163,23 @@ export class Hero {
     }
 
     this.isSliding.set(false);
+  }
+  // AUTOPLAY HELPER
+  restartAutoPlay() {
+    if (this.autoplayInterval) {
+      clearInterval(this.autoplayInterval);
+    }
+
+    this.autoplayInterval = setInterval(() => {
+      this.nextSlide();
+    }, 5000);
+  }
+
+  // ANGULAR LIFECYCLE - component destroyed
+  // Cleans up the timer when the component is destroyed
+  ngOnDestroy() {
+    if (this.autoplayInterval) {
+      clearInterval(this.autoplayInterval);
+    }
   }
 }
