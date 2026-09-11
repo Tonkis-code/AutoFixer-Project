@@ -1,15 +1,17 @@
 <header>
     <h1 class="logo" [class.menu-open]="menuOpen()">AutoFixer</h1>
-    <button (click)="menuOpen.set(!menuOpen())">☰</button>
-</header>
 
+    <div class="header-actions">
+        <button class="cart-button" aria-label="Shopping cart">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 3h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 7H6" />
+                <circle cx="10" cy="20" r="1" />
+                <circle cx="18" cy="20" r="1" />
+            </svg>
+        </button>
 
-<nav class="nav-menu" [class.open]="menuOpen()">
-    <h2 class="menu-logo">AutoFixer</h2>
-    <input type="text" placeholder="Search vehicles">
-
-    <div class="menu-links">
-        <a href="#">Vehicle Classes</a>
-        <a href="#">Admin</a>
+        <button class="menu-button" (click)="menuOpen.set(!menuOpen())" aria-label="Open menu">
+            ☰
+        </button>
     </div>
-</nav>
+</header>
