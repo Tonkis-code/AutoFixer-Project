@@ -30,6 +30,7 @@ The Angular frontend currently includes:
 
 - Responsive site header and navigation
 - Mobile hamburger navigation drawer
+- Expandable vehicle class navigation
 - Shopping cart icon
 - Dynamic featured vehicle Hero carousel
 - Automatic Hero slideshow
@@ -41,7 +42,15 @@ The Angular frontend currently includes:
 - Reusable vehicle card components
 - Dynamic vehicle class section
 - Hypercar, Sport, Motorcycle and Offroad classes
-- Responsive vehicle and class layouts
+- Vehicle class filtering and navigation
+- Vehicle search by name, manufacturer and class
+- Dynamic search results page
+- Search result count
+- Dynamic vehicle detail pages using vehicle slugs
+- Similar vehicle recommendations
+- Vehicle card navigation to detail pages
+- Hero navigation to detail pages
+- Responsive vehicle, class, search and detail layouts
 - Reusable site footer
 - Non-commercial project disclaimer
 - Vehicle images served by the Express backend
@@ -179,24 +188,30 @@ AutoFixer is currently under active development.
 - Manual carousel navigation
 - Responsive Hero layout
 - Vehicle class cards
+- Vehicle class filtering
 - Backend-hosted vehicle images
 - Responsive header and navigation
 - Mobile navigation drawer
+- Expandable vehicle class navigation
 - Shopping cart icon
-- Responsive vehicle and class layouts
+- Search functionality
+- Search by vehicle name, manufacturer and class
+- Search results page
+- Dynamic result count
+- Dynamic vehicle detail pages
+- Slug-based vehicle routing
+- Three dynamic similar vehicle recommendations
+- Vehicle card navigation
+- Hero vehicle navigation
+- Responsive vehicle, class, search and detail layouts
 - Responsive site footer
 - Project disclaimer
 
 ### Still To Come
 
-- Search functionality
-- Search results page
-- Vehicle detail pages
-- Similar vehicle recommendations
-- Vehicle card navigation
 - Admin product list
 - Admin product creation form
-- Final navigation and routing
+- Final requirement review
 - Final responsive and visual polish
 
 ## Design
