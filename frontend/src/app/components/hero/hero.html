@@ -13,7 +13,7 @@
         <p class="manufacturer">{{ slide.vehicle.manufacturer }}</p>
         <p class="vehicle-name">{{ slide.vehicle.name }}</p>
         <p class="price">€$ {{ slide.vehicle.price | number }}</p>
-        <button>Explore Vehicle</button>
+        <button [routerLink]="['/vehicles', slide.vehicle.slug]">Explore Vehicle</button>
     </div>
 
     <button class="hero-arrow hero-arrow-left " (click)="manualPreviousSlide()">

@@ -13,7 +13,7 @@
 
         <p class="price">€$ {{ vehicle().price | number }}</p>
 
-        <button class="explore-button">
+        <button class="explore-button" [routerLink]="['/vehicles', vehicle().slug]">
             Explore Vehicle <span>→</span>
         </button>
     </div>

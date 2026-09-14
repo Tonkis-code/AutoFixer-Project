@@ -3,10 +3,12 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+
   z-index: 10;
   pointer-events: none;
 }
@@ -20,7 +22,9 @@ header {
   font-family: 'Orbitron', sans-serif;
   font-size: 2rem;
   font-weight: 500;
+
   margin: 0;
+
   color: white;
   text-decoration: none;
 }
@@ -28,10 +32,10 @@ header {
 header button {
   background: transparent;
   border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 0.25rem;
+
   color: white;
+
+  cursor: pointer;
 }
 
 .nav-menu {
@@ -41,6 +45,7 @@ header button {
 
   width: 320px;
   height: 100vh;
+
   box-sizing: border-box;
 
   background: rgba(10, 10, 10, 0.96);
@@ -58,46 +63,19 @@ header button {
   transform: translateX(0);
 }
 
-.menu-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  border-top: 1px solid #333;
-}
-
-.menu-links a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 1rem 0;
-  border-bottom: 1px solid #333;
-
-  color: white;
-  text-decoration: none;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1.25rem;
-}
-
-.menu-links a:hover {
-  color: #aaa;
-}
-
 .menu-logo {
+  display: block;
+
   color: white;
+
   font-family: 'Orbitron', sans-serif;
   font-size: 2rem;
   font-weight: 500;
+
   margin: 0 0 2rem;
   padding-right: 3rem;
-  text-decoration: none;
-  display: block;
-}
 
-@media (max-width: 639px) {
-  .logo.menu-open {
-    visibility: hidden;
-  }
+  text-decoration: none;
 }
 
 .header-actions {
@@ -106,9 +84,15 @@ header button {
   gap: 0.75rem;
 }
 
+.header-actions button {
+  font-size: 2rem;
+  padding: 0.25rem;
+}
+
 .cart-button svg {
   width: 28px;
   height: 28px;
+
   fill: none;
   stroke: currentColor;
   stroke-width: 1.5;
@@ -118,40 +102,10 @@ header button {
   transform: translateY(5px);
 }
 
-.menu-label {
-  margin: 1rem 0 0.5rem;
-  color: #777;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.15rem;
-}
-
-.menu-bottom {
-  position: absolute;
-  left: 1.5rem;
-  right: 1.5rem;
-  bottom: 2rem;
-
-  padding-top: 1rem;
-  border-top: 1px solid #333;
-
-  font-family: 'Rajdhani', sans-serif;
-  color: #666;
-}
-
-.menu-bottom p {
-  margin: 0 0 0.5rem;
-  font-size: 0.8rem;
-  letter-spacing: 0.08rem;
-}
-
-.menu-bottom span {
-  font-size: 0.8rem;
-}
-
 .menu-search {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 48px;
+
   width: 100%;
   margin-bottom: 1.25rem;
 }
@@ -159,12 +113,14 @@ header button {
 .menu-search input {
   width: 100%;
   box-sizing: border-box;
+
   padding: 0.75rem;
 
   border: 1px solid white;
   border-right: none;
 
   outline: none;
+
   background: white;
   color: black;
 
@@ -183,4 +139,116 @@ header button {
   font-size: 1.4rem;
 
   cursor: pointer;
+}
+
+.menu-label {
+  margin: 1rem 0 0.5rem;
+
+  color: #777;
+
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.15rem;
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+
+  border-top: 1px solid #333;
+}
+
+.menu-links > a,
+.classes-toggle {
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 0;
+
+  background: transparent;
+
+  border: none;
+  border-bottom: 1px solid #333;
+
+  color: white;
+
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.25rem;
+
+  text-decoration: none;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.menu-links > a:hover,
+.classes-toggle:hover {
+  color: #aaa;
+}
+
+.class-links {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 1.25rem;
+
+  border-left: 1px solid #333;
+}
+
+.class-links a {
+  padding: 0.8rem 0 0.8rem 1rem;
+
+  border-bottom: 1px solid #222;
+
+  color: #aaa;
+
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.class-links a:hover {
+  color: white;
+}
+
+.class-links a:last-child {
+  border-bottom: 1px solid #333;
+}
+
+.menu-bottom {
+  position: absolute;
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 2rem;
+
+  padding-top: 1rem;
+
+  border-top: 1px solid #333;
+
+  font-family: 'Rajdhani', sans-serif;
+  color: #666;
+}
+
+.menu-bottom p {
+  margin: 0 0 0.5rem;
+
+  font-size: 0.8rem;
+  letter-spacing: 0.08rem;
+}
+
+.menu-bottom span {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 639px) {
+  .logo.menu-open {
+    visibility: hidden;
+  }
 }

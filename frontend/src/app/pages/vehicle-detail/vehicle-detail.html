@@ -1,0 +1,44 @@
+@if (vehicle(); as vehicle) {
+<main class="vehicle-detail">
+
+    <section class="vehicle-main">
+        <div class="vehicle-image">
+            <img [src]="'http://localhost:3000/images/' + vehicle.imageUrl" [alt]="vehicle.name">
+        </div>
+
+        <div class="vehicle-info">
+            <div class="vehicle-meta">
+                <span>{{ vehicle.manufacturer }}</span>
+                <span>{{ vehicle.vehicleClass }}</span>
+            </div>
+
+            <h1>{{ vehicle.name }}</h1>
+
+            <p class="sku">SKU: {{ vehicle.sku }}</p>
+
+            <p class="description">
+                {{ vehicle.description }}
+            </p>
+
+            <p class="price">
+                €$ {{ vehicle.price | number }}
+            </p>
+
+            <button class="cart-button">
+                Add to Cart
+            </button>
+        </div>
+    </section>
+
+    <section class="similar">
+        <h2>SIMILAR VEHICLES</h2>
+
+        <div class="vehicle-grid">
+            @for (similarVehicle of similarVehicles(); track similarVehicle.id) {
+            <app-vehicle-card [vehicle]="similarVehicle" />
+            }
+        </div>
+    </section>
+
+</main>
+}

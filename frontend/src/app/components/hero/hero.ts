@@ -1,9 +1,10 @@
 import { Component, input, computed, signal, OnInit, OnDestroy } from '@angular/core';
 import { Vehicle } from '../../models/vehicle';
 import { DecimalPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [DecimalPipe],
+  imports: [DecimalPipe, RouterLink],
   selector: 'app-hero',
   styleUrl: './hero.css',
   templateUrl: './hero.html',

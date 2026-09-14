@@ -1,0 +1,122 @@
+.vehicle-detail {
+  min-height: 100vh;
+  padding: 7rem 1rem 3rem;
+  color: white;
+}
+
+.vehicle-main {
+  max-width: 1400px;
+  margin: 0 auto 5rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.vehicle-image {
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+.vehicle-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vehicle-info {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.vehicle-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  color: #aaa;
+  text-transform: uppercase;
+  font-size: 1rem;
+
+  margin-bottom: 1rem;
+}
+
+.vehicle-info h1 {
+  margin: 0 0 0.5rem;
+
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.sku {
+  margin: 0 0 2rem;
+  color: #777;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.price {
+  margin: 2rem 0;
+
+  font-size: 2rem;
+  color: rgb(253, 202, 202);
+}
+
+.cart-button {
+  width: 100%;
+  padding: 1rem;
+
+  background: white;
+  color: black;
+
+  border: 1px solid white;
+
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.similar {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.similar h2 {
+  text-align: center;
+
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+
+  margin-bottom: 2rem;
+}
+
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .vehicle-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .vehicle-main {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: center;
+  }
+
+  .vehicle-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

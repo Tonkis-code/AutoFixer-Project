@@ -25,10 +25,19 @@
     <p class="menu-label">NAVIGATION</p>
 
     <div class="menu-links">
-        <a href="#">
+        <button class="classes-toggle" (click)="classesOpen.set(!classesOpen())">
             <span>Vehicle Classes</span>
-            <span>→</span>
-        </a>
+            <span>{{ classesOpen() ? '-' : '+' }}</span>
+        </button>
+
+        @if (classesOpen()) {
+        <div class="class-links">
+            <a routerLink="/search" [queryParams]="{ q: 'Hypercar' }" (click)="menuOpen.set(false)">Hypercar</a>
+            <a routerLink="/search" [queryParams]="{ q: 'Sport' }" (click)="menuOpen.set(false)">Sport</a>
+            <a routerLink="/search" [queryParams]="{ q: 'Motorcycle' }" (click)="menuOpen.set(false)">Motorcycle</a>
+            <a routerLink="/search" [queryParams]="{ q: 'Offroad' }" (click)="menuOpen.set(false)">Offroad</a>
+        </div>
+        }
         <a href="#">
             <span>Admin</span>
             <span>→</span>

@@ -13,4 +13,8 @@ export class VehicleService {
   getVehicles() {
     return this.http.get<Vehicle[]>(this.apiUrl);
   }
+
+  getVehicleBySlug(slug: string) {
+    return this.http.get<Vehicle>(`${this.apiUrl}/${slug}`);
+  }
 }

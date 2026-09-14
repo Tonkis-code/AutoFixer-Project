@@ -9,6 +9,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class Header {
   menuOpen = signal(false);
+  classesOpen = signal(false);
 
   private router = inject(Router);
 
