@@ -8,6 +8,12 @@ header {
   left: 0;
   right: 0;
   z-index: 10;
+  pointer-events: none;
+}
+
+.logo,
+.header-actions {
+  pointer-events: auto;
 }
 
 .logo {
@@ -16,6 +22,7 @@ header {
   font-weight: 500;
   margin: 0;
   color: white;
+  text-decoration: none;
 }
 
 header button {
@@ -51,13 +58,6 @@ header button {
   transform: translateX(0);
 }
 
-.nav-menu a {
-  color: white;
-  text-decoration: none;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1.25rem;
-}
-
 .menu-links {
   display: flex;
   flex-direction: column;
@@ -90,6 +90,8 @@ header button {
   font-weight: 500;
   margin: 0 0 2rem;
   padding-right: 3rem;
+  text-decoration: none;
+  display: block;
 }
 
 @media (max-width: 639px) {

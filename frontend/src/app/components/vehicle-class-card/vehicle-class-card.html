@@ -1,5 +1,5 @@
-<article class="class-card">
+<a class="class-card" routerLink="/search" [queryParams]="{ q: className() }">
     <div class="class-image" [style.background-image]="'url(http://localhost:3000/images/' + imageUrl() + ')'"></div>
 
     <h3>{{ className() }}</h3>
-</article>
+</a>

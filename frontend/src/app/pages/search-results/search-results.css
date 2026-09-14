@@ -1,0 +1,38 @@
+.search-results {
+  padding: 7rem 1rem 3rem;
+  min-height: 100vh;
+  color: white;
+}
+
+.search-results h1 {
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.search-summary {
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 2rem;
+}
+
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .vehicle-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1500px) {
+  .vehicle-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,5 +1,5 @@
 <header>
-    <h1 class="logo" [class.menu-open]="menuOpen()">AutoFixer</h1>
+    <a routerLink="/" class="logo" [class.menu-open]="menuOpen()">AutoFixer</a>
 
     <div class="header-actions">
         <button class="cart-button" aria-label="Shopping cart">
@@ -17,10 +17,10 @@
 </header>
 
 <nav class="nav-menu" [class.open]="menuOpen()">
-    <h2 class="menu-logo">AutoFixer</h2>
+    <a routerLink="/" class="menu-logo" (click)="menuOpen.set(false)">AutoFixer</a>
     <div class="menu-search">
-        <input type="text" placeholder="Search vehicles">
-        <button aria-label="Search">→</button>
+        <input type="text" placeholder="Search vehicles" #searchInput (keydown.enter)="search(searchInput.value)">
+        <button aria-label="Search" (click)="search(searchInput.value)">→</button>
     </div>
     <p class="menu-label">NAVIGATION</p>
 

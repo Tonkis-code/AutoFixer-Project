@@ -1,0 +1,15 @@
+<section class="search-results">
+    <h1>SEARCH RESULTS</h1>
+
+    <p class="search-summary">
+        {{ filteredVehicles().length }}
+        result(s) for
+        "{{ searchTerm() }}"
+    </p>
+
+    <div class="vehicle-grid">
+        @for (vehicle of filteredVehicles(); track vehicle.id) {
+        <app-vehicle-card [vehicle]="vehicle" />
+        }
+    </div>
+</section>
