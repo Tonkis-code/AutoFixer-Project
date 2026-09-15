@@ -1,0 +1,52 @@
+<main class="admin-new-product">
+    <h1>Administration</h1>
+
+    <div class="admin-header">
+        <h2>New Product</h2>
+    </div>
+
+    <form (ngSubmit)="submit()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" [(ngModel)]="newVehicle.name">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="5" [(ngModel)]="newVehicle.description"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="sku">SKU</label>
+            <input id="sku" type="text" name="sku" [(ngModel)]="newVehicle.sku">
+        </div>
+
+        <div class="form-group">
+            <label for="imageUrl">Image URL</label>
+            <input id="imageUrl" type="text" name="imageUrl" [(ngModel)]="newVehicle.imageUrl">
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input id="price" type="number" name="price" [(ngModel)]="newVehicle.price">
+        </div>
+
+        <div class="form-group">
+            <label for="manufacturer">Brand</label>
+            <input id="manufacturer" type="text" name="manufacturer" [(ngModel)]="newVehicle.manufacturer">
+        </div>
+
+        <div class="form-group">
+            <label for="vehicleClass">Vehicle Class</label>
+            <select id="vehicleClass" name="vehicleClass" [(ngModel)]="newVehicle.vehicleClass">
+                <option value="">Select vehicle class</option>
+                <option value="Hypercar">Hypercar</option>
+                <option value="Sport">Sport</option>
+                <option value="Motorcycle">Motorcycle</option>
+                <option value="Offroad">Offroad</option>
+            </select>
+        </div>
+
+        <button type="submit">Create Product</button>
+    </form>
+</main>

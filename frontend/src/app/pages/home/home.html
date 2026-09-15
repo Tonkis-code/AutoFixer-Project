@@ -9,7 +9,7 @@
 
     <div class="vehicle-grid">
 
-        @for (vehicle of vehicles(); track vehicle.id) {
+        @for (vehicle of vehicles().slice(0, 8); track vehicle.id) {
         <div>
             <app-vehicle-card [vehicle]="vehicle" />
         </div>

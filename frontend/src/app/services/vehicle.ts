@@ -17,4 +17,8 @@ export class VehicleService {
   getVehicleBySlug(slug: string) {
     return this.http.get<Vehicle>(`${this.apiUrl}/${slug}`);
   }
+
+  createVehicle(vehicle: Omit<Vehicle, 'id' | 'slug'>) {
+    return this.http.post<Vehicle>(this.apiUrl, vehicle);
+  }
 }

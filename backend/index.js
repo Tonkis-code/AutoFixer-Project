@@ -52,10 +52,14 @@ app.post('/api/vehicles', (req, res) => {
         description,
         price,
         imageUrl,
-        slug,
         sku,
         vehicleClass
     } = req.body;
+
+    const slug = `${manufacturer}-${name}`
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '');
 
     db.run(
         `INSERT INTO vehicles

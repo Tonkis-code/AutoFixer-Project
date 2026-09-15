@@ -9,8 +9,18 @@ header {
   left: 0;
   right: 0;
 
-  z-index: 10;
+  z-index: 11;
   pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(8, 8, 8, 0.96) 0%,
+    rgba(8, 8, 8, 0.7) 55%,
+    rgba(8, 8, 8, 0) 75%
+  );
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .logo,
@@ -56,7 +66,7 @@ header button {
   transform: translateX(100%);
   transition: transform 0.3s ease;
 
-  z-index: 9;
+  z-index: 10;
 }
 
 .nav-menu.open {
@@ -250,5 +260,22 @@ header button {
 @media (max-width: 639px) {
   .logo.menu-open {
     visibility: hidden;
+  }
+
+  header {
+    padding: 0.6rem 1rem;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  .header-actions button {
+    font-size: 1.6rem;
+  }
+
+  .cart-button svg {
+    width: 24px;
+    height: 24px;
   }
 }

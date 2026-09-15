@@ -1,0 +1,102 @@
+.admin-products {
+  min-height: 100vh;
+  padding: 7rem 1rem 4rem;
+  box-sizing: border-box;
+  color: white;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.admin-products h1 {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.admin-header {
+  max-width: 1200px;
+  margin: 0 auto 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-header h2 {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.admin-header a {
+  padding: 0.75rem 1.25rem;
+  background: white;
+  border: 1px solid white;
+  color: black;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 1rem;
+  border-bottom: 1px solid #333;
+  text-align: left;
+}
+
+th {
+  color: #888;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+td {
+  font-size: 1.1rem;
+}
+
+tbody tr {
+  transition: background 0.2s ease;
+}
+
+@media (hover: hover) {
+  tbody tr:hover {
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
+
+@media (max-width: 639px) {
+  .admin-products {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .admin-products h1 {
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+  }
+
+  .admin-header h2 {
+    font-size: 1.25rem;
+  }
+
+  th,
+  td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  td {
+    font-size: 0.95rem;
+  }
+}

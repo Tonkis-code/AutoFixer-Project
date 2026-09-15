@@ -1,0 +1,31 @@
+<main class="admin-products">
+
+    <h1>Administration</h1>
+
+    <div class="admin-header">
+        <h2>Products</h2>
+        <a routerLink="/admin/products/new">New Product</a>
+    </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>SKU</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (vehicle of vehicles(); track vehicle.id) {
+            <tr>
+                <td>{{ vehicle.name }}</td>
+                <td>{{ vehicle.sku }}</td>
+                <td>{{ vehicle.price }}</td>
+            </tr>
+            }
+        </tbody>
+
+    </table>
+
+</main>

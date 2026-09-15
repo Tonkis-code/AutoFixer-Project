@@ -1,4 +1,4 @@
-<header>
+<header [class.menu-open]="menuOpen()">
     <a routerLink="/" class="logo" [class.menu-open]="menuOpen()">AutoFixer</a>
 
     <div class="header-actions">
@@ -38,7 +38,7 @@
             <a routerLink="/search" [queryParams]="{ q: 'Offroad' }" (click)="menuOpen.set(false)">Offroad</a>
         </div>
         }
-        <a href="#">
+        <a routerLink="/admin/products" (click)="menuOpen.set(false)">
             <span>Admin</span>
             <span>→</span>
         </a>
