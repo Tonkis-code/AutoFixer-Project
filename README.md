@@ -38,7 +38,7 @@ The Angular frontend currently includes:
 - Seamless forward and backward carousel looping
 - Responsive Hero layout for desktop, tablet and mobile
 - Dynamic vehicle catalogue populated from the backend
-- Eight featured vehicles
+- Eight featured vehicles displayed on the homepage
 - Reusable vehicle card components
 - Dynamic vehicle class section
 - Hypercar, Sport, Motorcycle and Offroad classes
@@ -50,7 +50,12 @@ The Angular frontend currently includes:
 - Similar vehicle recommendations
 - Vehicle card navigation to detail pages
 - Hero navigation to detail pages
-- Responsive vehicle, class, search and detail layouts
+- Admin product list
+- Admin product creation form
+- Dynamic form binding using Angular forms
+- Product creation through the backend API
+- Automatic navigation back to the admin product list after creation
+- Responsive vehicle, class, search, detail and admin layouts
 - Reusable site footer
 - Non-commercial project disclaimer
 - Vehicle images served by the Express backend
@@ -63,6 +68,7 @@ The Express backend currently supports:
 - Retrieving all vehicles
 - Retrieving a single vehicle by slug
 - Adding new vehicles
+- Automatic slug generation for newly created vehicles
 - SQLite database storage
 - Vehicle seed data
 - Static vehicle image hosting
@@ -108,12 +114,46 @@ Example:
 }
 ```
 
-The database is currently seeded with eight vehicles across four vehicle classes:
+The initial database seed contains eight vehicles across four vehicle classes:
 
 - Hypercar
 - Sport
 - Motorcycle
 - Offroad
+
+Additional vehicles can be added through the administration interface. The homepage is limited to displaying eight featured vehicles, while the admin product list and search functionality can access the full vehicle catalogue.
+
+## Administration
+
+AutoFixer includes a basic administration interface for managing the vehicle catalogue.
+
+### Product List
+
+```text
+/admin/products
+```
+
+The product list retrieves and displays all vehicles currently stored in the SQLite database, including their name, SKU and price.
+
+### New Product
+
+```text
+/admin/products/new
+```
+
+New vehicles can be created using the administration form.
+
+The form supports:
+
+- Name
+- Description
+- SKU
+- Image URL
+- Price
+- Brand / Manufacturer
+- Vehicle class
+
+When the form is submitted, Angular sends the vehicle data to the Express API. The backend generates the vehicle slug, stores the new vehicle in SQLite and returns the created vehicle. The frontend then navigates back to the admin product list.
 
 ## Running the Project
 
@@ -173,15 +213,15 @@ Then open the local address shown by Angular in the terminal.
 
 ## Development Status
 
-AutoFixer is currently under active development.
+AutoFixer is currently in the final stage of development.
 
 ### Implemented
 
 - Express REST API
 - SQLite vehicle database
 - Database seeding
-- Eight-vehicle catalogue
-- Dynamic vehicle data
+- Dynamic vehicle catalogue
+- Eight featured homepage vehicles
 - Dynamic featured Hero carousel
 - Automatic Hero slideshow
 - Seamless carousel looping
@@ -203,22 +243,27 @@ AutoFixer is currently under active development.
 - Three dynamic similar vehicle recommendations
 - Vehicle card navigation
 - Hero vehicle navigation
-- Responsive vehicle, class, search and detail layouts
+- Admin product list
+- Admin product creation form
+- Angular form binding
+- POST requests for vehicle creation
+- Backend slug generation
+- Admin navigation
+- Responsive vehicle, class, search, detail and admin layouts
 - Responsive site footer
 - Project disclaimer
 
 ### Still To Come
 
-- Admin product list
-- Admin product creation form
 - Final requirement review
 - Final responsive and visual polish
+- Final navigation cleanup
 
 ## Design
 
 The interface is based on an original Figma design created for the project. It uses a dark, futuristic vehicle marketplace aesthetic inspired by Cyberpunk 2077.
 
-Vehicle screenshots used throughout the interface were captured in-game specifically for the project.
+Most vehicle screenshots used throughout the interface were captured in-game specifically for the project. Additional imagery may be used for educational and testing purposes.
 
 ## Disclaimer
 
